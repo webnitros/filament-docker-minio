@@ -170,9 +170,7 @@ return [
         App\Providers\Filament\AdminPanelProvider::class,
         App\Providers\RouteServiceProvider::class,
         Filament\FilamentServiceProvider::class,
-        App\Providers\ProjectServiceProvider::class,
         App\Providers\UpdaterServiceProvider::class,
-        \App\Providers\CollectionLoadServiceProvider::class
     ])->toArray(),
 
     /*
