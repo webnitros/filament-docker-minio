@@ -30,6 +30,4 @@ vendor
 /supervisord.pid
 
 # Project exclude paths
-/storage/app/
-/storage/debugbar/
-/storage/framework/
+!/storage/**/*.gitignore
