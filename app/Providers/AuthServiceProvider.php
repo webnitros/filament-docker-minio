@@ -7,8 +7,6 @@ use Adrolli\FilamentJobManager\Models\FailedJob;
 use Adrolli\FilamentJobManager\Models\Job;
 use Adrolli\FilamentJobManager\Models\JobBatch;
 use Adrolli\FilamentJobManager\Models\JobManager;
-use App\Models\Branch;
-use App\Policies\BranchPolicy;
 use App\Policies\FailedJobPolicy;
 use App\Policies\JobBatchPolicy;
 use App\Policies\JobManagerPolicy;
@@ -23,8 +21,6 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
-        Branch::class => BranchPolicy::class,
         Job::class => JobPolicy::class,
         JobManager::class => JobManagerPolicy::class,
         FailedJob::class => FailedJobPolicy::class,
