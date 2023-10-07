@@ -16,10 +16,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // Health service Queue all 5 minutes
-        $schedule->command(DispatchQueueCheckJobsCommand::class)->everyMinute();
+        $schedule->command(DispatchQueueCheckJobsCommand::class)->everyFiveMinutes();
 
         // Health service Schedule all 5 minutes
-        $schedule->command(ScheduleCheckHeartbeatCommand::class)->everyMinute();
+        $schedule->command(ScheduleCheckHeartbeatCommand::class)->everyFiveMinutes();
     }
 
     /**

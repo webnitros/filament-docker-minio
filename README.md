@@ -7,7 +7,7 @@ make remake
 php artisan key:generate
 ```
 
-## Access
+## Admin
 
 ```
 Admin
@@ -15,13 +15,19 @@ http://127.0.0.1:8401/admin/login
 user: admin@filament.example
 password: admin
 
-Minio
-http://127.0.0.1:8900/browser/local
-user: sail
-password: password
 ```
 
 # Health Check Results
 
 Контенер с worker выполнить restart для работы крон задач и очередей
 После restart в Health Check Results очереди и крон задания должны быть в статусе OK
+
+# Minio
+
+Внимание s3 хранилище всегда использовать как дополнительный диск, иначе да же temp файл будет сохраняться в s3
+
+```
+http://127.0.0.1:8900/browser/local
+user: sail
+password: password
+```
