@@ -24,9 +24,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-COPY ./docker/endpoint.sh /usr/local/bin/endpoint.sh
-RUN chmod +x /usr/local/bin/endpoint.sh
-
 # Копирование конфигурационного файла supervisord
 COPY ./docker/app/supervisor/supervisord.conf /etc/supervisord.conf
 RUN mkdir -p /var/log/supervisor
