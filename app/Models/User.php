@@ -63,12 +63,4 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         'password' => 'hashed',
     ];
 
-    /**
-     * Полиморфная связь обратная.
-     * @return MorphToMany
-     */
-    public function ProjectRemoteTasks(): MorphToMany
-    {
-        return $this->morphedByMany(ProjectRemoteTask::class, 'userable');
-    }
 }
