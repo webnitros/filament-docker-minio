@@ -31,3 +31,8 @@ http://127.0.0.1:8900/browser/local
 user: sail
 password: password
 ```
+
+# Docs
+
+[Filament](https://filamentphp.com/docs/3.x/panels/getting-started)
+[Icons](https://blade-ui-kit.com/blade-icons?set=1)
