@@ -98,8 +98,9 @@ class AdminPanelProvider extends PanelProvider
                     )
                     ->enableSanctumTokens()
                     ->enableTwoFactorAuthentication()
+                    ->avatarUploadComponent(fn($fileUpload) => $fileUpload->disableLabel()->disk('s3'))
                     ->myProfile(
-                        hasAvatars: false,
+                        hasAvatars: true,
                     ),
 
                 //QuickCreatePlugin::make(),
