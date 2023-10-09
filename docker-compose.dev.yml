@@ -27,7 +27,7 @@ services:
       - './docker/nginx/templates:/etc/nginx/templates'
       - './public:/var/www/html/public'
     ports:
-      - ${PUB_NGINX_PORT:-8401}:80
+      - ${PUB_NGINX_PORT:-0}:80
     depends_on:
       - app
       - mysql
@@ -37,7 +37,7 @@ services:
   mysql:
     image: 'mysql/mysql-server:8.0'
     ports:
-      - '${FORWARD_DB_PORT:-3306}:3306'
+      - '${FORWARD_DB_PORT:-0}:3306'
     environment:
       MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
       MYSQL_ROOT_HOST: "%"
@@ -100,12 +100,12 @@ services:
   minio:
     image: 'minio/minio:latest'
     ports:
-      - '${FORWARD_MINIO_PORT:-9001}:9000'
-      - '${FORWARD_MINIO_CONSOLE_PORT:-8900}:8900'
+      - '${FORWARD_MINIO_PORT:-0}:9000'
+      - '${FORWARD_MINIO_CONSOLE_PORT:-0}:8900'
     environment:
       MINIO_ROOT_USER: '${MINIO_ROOT_USER-sail}'
       MINIO_ROOT_PASSWORD: '${MINIO_ROOT_PASSWORD-password}'
-      MINIO_BROWSER_REDIRECT_URL: 'http://127.0.0.1:${PUB_NGINX_PORT:-8401}/minio/ui/'
+      MINIO_BROWSER_REDIRECT_URL: 'http://127.0.0.1:${PUB_NGINX_PORT:-0}/minio/ui/'
       MINIO_SERVER_URL: 'http://minio:9000'
     volumes:
       - 'sail-minio:/data/minio'
