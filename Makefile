@@ -1,5 +1,3 @@
-include .env
-
 up:
 	docker compose up -d
 stop:
@@ -43,6 +41,6 @@ seed:
 cache:
 	docker compose exec app bash -c 'php artisan cache:clear'
 minio:
-	docker compose exec minio bash -c 'mc config host add laravel http://localhost:9000 ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD}' # add host
-	docker compose exec minio bash -c 'mc mb laravel/${AWS_BUCKET} --ignore-existing' # create public bucket
-	docker compose exec minio bash -c 'mc anonymous set download laravel/${AWS_BUCKET}/public' # for dir public access published files
+	docker compose exec minio bash -c 'mc config host add laravel http://localhost:9000 sail password' # add host
+	docker compose exec minio bash -c 'mc mb laravel/storage --ignore-existing' # create public bucket
+	docker compose exec minio bash -c 'mc anonymous set download laravel/storage/public' # for dir public access published files
