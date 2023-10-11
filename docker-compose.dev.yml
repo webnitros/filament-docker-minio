@@ -25,6 +25,7 @@ services:
       target: ${APP_BUILD_TARGET:-deploy}
     volumes:
       - './docker/nginx/templates:/etc/nginx/templates'
+      - './docker/nginx/deployment:/etc/nginx/deployment'
       - './public:/var/www/html/public'
     ports:
       - ${PUB_NGINX_PORT:-0}:80

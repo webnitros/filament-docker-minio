@@ -5,7 +5,7 @@ return [
         Spatie\Health\Notifications\CheckFailedNotification::class => ['mail'],
     ],
     'mail' => [
-        'to' => 'info@bustep.ru',
+        'to' => 'admin@filament.example',
         'from' => [
             'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
             'name' => env('MAIL_FROM_NAME', 'Example'),

@@ -2,8 +2,6 @@ version: '3.9'
 services:
   app:
     image: cr.selcloud.ru/swarm/filament-app:latest
-    build:
-      dockerfile: ./docker/app/Dockerfile
     volumes:
       - 'sail-storage:/var/www/html/storage'
     working_dir: /var/www/html
@@ -20,8 +18,6 @@ services:
         order: start-first
   nginx:
     image: cr.selcloud.ru/swarm/filament-nginx:latest
-    build:
-      dockerfile: ./docker/nginx/Dockerfile
     depends_on:
       - app
     working_dir: /var/www/html
