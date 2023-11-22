@@ -4,6 +4,7 @@
 cp -f ./docker-compose.dev.yml ./docker-compose.yml
 cp -f ./.env.example ./.env
 make remake
+make composer
 php artisan key:generate
 ```
 
